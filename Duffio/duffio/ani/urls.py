@@ -1,3 +1,4 @@
+import profile
 from django import views
 from django.urls import path
 from . import views
@@ -5,5 +6,9 @@ from . import views
 app_name = 'ani'
 
 urlpatterns = [
-    path('', views.index, name="index"), # ページを増やしたいときはまずここでurlを追加する
+    path('', views.top, name="top"),
+    path('profile/', views.profile, name="profile"),
+    path('diary/', views.diary, name="diary"),
+    path('album/', views.album, name="album"),
+    path('fortune/', views.fortune, name="fortune"), # ページを増やしたいときはまずここでurlを追加する
 ]
