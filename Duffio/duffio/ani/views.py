@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from .forms import DayCreateForm
+from .models import Day
 
 def top(request):
     return render(request,'ani/top.html')
@@ -8,6 +9,9 @@ def profile(request):
     return render(request,'ani/profile.html')
 
 def diary(request):
+    context = {
+        'diary':Day.objects.all(),
+    }
     return render(request,'ani/diary.html')
 
 def add(request):
@@ -15,7 +19,7 @@ def add(request):
     form = DayCreateForm(request.POST or None)
 
     # method=POST、つまり送信ボタンを押下時、入力内容に問題がなければ
-    if request.method == 'POST' and form.is_valid():
+    if request.method =="POST" and form.is_valid():
         form.save()
         return redirect('ani:diary')
     
