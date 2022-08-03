@@ -13,8 +13,8 @@ urlpatterns = [
 # <int:pk>というのは、それぞれの記事に紐づいている主キーという意味
 # 一覧や追加ページはそれぞれの記事に紐づいていないので不要
     path('diary/update/<int:pk>', views.update, name="update"),
-    path('diary/delete/<int:pk>', views.update, name="delete"),
-    path('diary/detail/<int:pk>', views.update, name="detail"),
+    path('diary/delete/<int:pk>', views.delete, name="delete"),
+    path('diary/detail/<int:pk>', views.detail, name="detail"),
     path('album/', views.album, name="album"),
     path('fortune/', views.fortune, name="fortune"), # ページを増やしたいときはまずここでurlを追加する
 ]

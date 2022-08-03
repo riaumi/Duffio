@@ -62,7 +62,7 @@ def delete(request, pk): # 削除
     context = {
         'day':day
     }
-    return render(request, 'ani/day_delete.html', context)
+    return render(request, 'ani/diary_delete.html', context)
 
 
 def detail(request, pk): # 詳細
@@ -72,7 +72,7 @@ def detail(request, pk): # 詳細
     context = {
         'day':day
     }
-    return render(request, 'ani/day_detail.html', context)
+    return render(request, 'ani/diary_detail.html', context)
 
 def album(request):
     return render(request,'ani/album.html')
