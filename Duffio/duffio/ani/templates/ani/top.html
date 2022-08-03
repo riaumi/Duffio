@@ -1,6 +1,8 @@
 {% extends 'ani/base.html' %}
 
+
 {% block content %}
+<h1>ダフィオ記念館</h1>
 <body id="top">
 	<div id="wrapper">
 		<div id="sidebar">
@@ -9,12 +11,11 @@
 					<p id="menuWrap"><a id="menu"><span id="menuBtn"></span></a></p>
 					<div class="panel">
 						<ul>
-							<li><a href="#top">TOP</a></li>
-							<li><a href="#sec01">自己紹介</a></li>
-							<li><a href="#sec02">日記</a></li>
-							<li><a href="#sec03">アルバム</a></li>
-							<li><a href="#sec04">ダフィオ占い</a></li>
-							<li><a href="#sec05">COMPANY</a></li>
+							<li><a href="{% url 'ani:top' %}">TOP</a></li>
+							<li><a href="{% url 'ani:profile' %}">自己紹介</a></li>
+							<li><a href="{% url 'ani:diary' %}">日記</a></li>
+							<li><a href="{% url 'ani:album' %}">アルバム</a></li>
+							<li><a href="{% url 'ani:fortune' %}">ダフィオ占い</a></li>
 						</ul>
 					</div>
 				</nav>
