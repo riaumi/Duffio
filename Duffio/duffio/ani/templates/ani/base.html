@@ -1,15 +1,23 @@
 <!doctype html>
 <html lang="ja">
 	<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <title>ダフィオ記念館</title>
-	</head>
+    <!--metaタグはheadタグの中に記載する。コンテンツ上では表示されない。
+		headタグ内には検索エンジンやブラウザのための情報を記載-->
+	<meta charset="UTF-8">
+	<!--descriptionには記事の要約を記載する-->
+	<meta name="description" content="ダフィオのための特設サイト">
+	<!--viewportはモバイル端末での表示をブラウザに指示するためのメタタグ、以下はGoogle推奨の記述-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--titleには記事のタイトルを記載する-->
+	<title>ダフィオ記念館</title>
+	<!--linkタグは「そのページ」と「外部のファイルやページ」を関連づけるためのもの
+	ここではrelでファイルとの関係性を示し、media=allで全てのメディアに適用、
+	hrefでファイルがある場所を指定している-->
+	<link rel="stylesheet" media="all" href="css/style.css">
+	<!--scriptでjavascriptを埋め込む。srcはsourceの意味で情報元を指す-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+	<script src="js/script.js"></script>
+    </head>
 	<body>
 	{% block content %}
     {% endblock %}
