@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<nav class="nav-item">
+<nav class="nav">
     <a class="nav-link active" href="{% url 'ani:diary' %}">一覧</a>
     <a class="nav-link" href="{% url 'ani:add' %}">追加</a>
 </nav>
@@ -13,13 +13,17 @@
         <tr>
             <th>タイトル</th>
             <th>日付</th>
+            <th>更新</th>
+            <th>削除</th>
         </tr>
     </thread>
     <tbody>
         {% for day in diary %}
         <tr>
-            <td>{{day.title}}</td>
-            <td>{{day.date}}</td>
+            <td><a href="{% url 'ani:detail' day.pk %}">{{ day.title }}</a></td>
+            <td>{{ day.date }}</td>
+            <td><a href="{% url 'ani:update' day.pk %}">更新</a></td>
+            <td><a href="{% url 'ani:delete' day.pk %}">削除</a></td>
         </tr>
     {% endfor %}
     </tbody>
