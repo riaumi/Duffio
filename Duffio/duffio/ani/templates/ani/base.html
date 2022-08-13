@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="ja">
 	<head>
-    <!--metaタグはheadタグの中に記載する。コンテンツ上では表示されない。
-		headタグ内には検索エンジンやブラウザのための情報を記載-->
+    <!-- metaタグはheadタグの中に記載する。コンテンツ上では表示されない。
+		headタグ内には検索エンジンやブラウザのための情報を記載 -->
 	<meta charset="UTF-8">
 	<!--descriptionには記事の要約を記載する-->
 	<meta name="description" content="ダフィオのための特設サイト">
@@ -17,8 +17,42 @@
 	<!--scriptでjavascriptを埋め込む。srcはsourceの意味で情報元を指す-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 	<script src="js/script.js"></script>
+	<style>
+	.container {
+		width: 90%;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+	}
+	.ul{
+		list-style: none;
+	}
+
+	.list{
+		list-style: none;
+		right: 0px;
+		display: flex;
+		writing-mode: vertical-rl;
+	}
+
+	.item{
+		padding:20px 0;
+	}
+	</style>
     </head>
 	<body>
+		<h1>ダフィオ記念館</h1>
+			<div class="wrapper">
+						<ul class="list">
+							<li class = "item"><a href="{% url 'ani:top' %}">TOP</a></li>
+							<li class = "item"><a href="{% url 'ani:profile' %}">自己紹介</a></li>
+							<li class = "item"><a href="{% url 'ani:diary' %}">日記</a></li>
+							<li class = "item"><a href="{% url 'ani:album' %}">アルバム</a></li>
+							<li class = "item"><a href="{% url 'ani:fortune' %}">ダフィオ占い</a></li>
+						</ul>
+				
+			</div>
+	</body>
 	{% block content %}
     {% endblock %}
 
