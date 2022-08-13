@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -14,24 +15,24 @@
     <!--linkタグは「そのページ」と「外部のファイルやページ」を関連づけるためのもの
     ここではrelでファイルとの関係性を示し、media=allで全てのメディアに適用、
     hrefでファイルがある場所を指定している。外部のcssファイルを参照している-->
-    <link rel="stylesheet" media="all" href="css/style.css">
-    <link rel="stylesheet" href="css/slide.css">
+	<link rel="stylesheet" media="all" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'css/slide.css' %}">
     <!--scriptでjavascriptを埋め込む。srcはsourceの意味で情報元を指す-->
-    <script src="js/openclose.js"></script>
-    <script src="js/fixmenu.js"></script>
-    <script src="js/fixmenu_pagetop.js"></script>
-    <script src="js/ddmenu_min.js"></script>
+    <script type="text/javascript" src="{% static 'js/openclose.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/fixmenu.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/fixmenu_pagetop.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/ddmenu_min.js' %}"></script>
 </head>
 <body class="home">
 <div id="container">
 <header>
-<h1 id="logo"><a href="{% url 'ani:top' %}"><img src="images/logo.png" alt="ダフィオ記念館"></a></h1>
+<h1 id="logo"><a href="{% url 'ani:top' %}"><img src="{% static 'images/logo.png' %}" alt="ダフィオ記念館"></a></h1>
 <!--スライドショー-->
 <aside id="mainimg">
-<img src="images/0.png" alt="" class="slide0">
-<img src="images/1.jpg" alt="" class="slide1">
-<img src="images/2.jpg" alt="" class="slide2">
-<img src="images/3.jpg" alt="" class="slide3">
+<img src="{% static 'images/0.png' %}" alt="" class="slide0">
+<img src="{% static 'images/1.png' %}" alt="" class="slide1">
+<img src="{% static 'images/2.png' %}" alt="" class="slide2">
+<img src="{% static 'images/3.png' %}" alt="" class="slide3">
 </aside>
 </header>
 

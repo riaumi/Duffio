@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="ja">
 	<head>
@@ -14,36 +15,17 @@
 	<!--linkタグは「そのページ」と「外部のファイルやページ」を関連づけるためのもの
 	ここではrelでファイルとの関係性を示し、media=allで全てのメディアに適用、
 	hrefでファイルがある場所を指定している。外部のcssファイルを参照している-->
-	<link rel="stylesheet" media="all" href="css/style.css">
-	<link rel="stylesheet" href="css/slide.css">
+	<link rel="stylesheet" media="all" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'css/slide.css' %}">
 	<!--scriptでjavascriptを埋め込む。srcはsourceの意味で情報元を指す-->
-	<script src="js/openclose.js"></script>
-	<script src="js/fixmenu.js"></script>
-	<script src="js/fixmenu_pagetop.js"></script>
-	<script src="js/ddmenu_min.js"></script>
+	<script type="text/javascript" src="{% static 'js/openclose.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/fixmenu.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/fixmenu_pagetop.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/ddmenu_min.js' %}"></script>
 	</head>
-	<div id="wrapper">
-		<div id="sidebar">
-			<div id="sidebarWrap">
-				<h1>ダフィオ記念館</h1>
-				<nav id="mainnav">
-					<div class="panel">
-					<ul>
-						<li><a href="{% url 'ani:top' %}">TOP</a></li>
-						<li><a href="{% url 'ani:profile' %}">自己紹介</a></li>
-						<li><a href="{% url 'ani:diary' %}">日記</a></li>
-						<li><a href="{% url 'ani:album' %}">アルバム</a></li>
-						<li><a href="{% url 'ani:fortune' %}">ダフィオ占い</a></li>
-					</ul>
-			</div>
+	
 	<body>
 	{% block content %}
     {% endblock %}
-	</body>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	</body>
 </html>
