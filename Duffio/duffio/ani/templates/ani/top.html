@@ -1,8 +1,82 @@
-{% extends 'ani/base.html' %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- metaタグはheadタグの中に記載する。コンテンツ上では表示されない。
+        headタグ内には検索エンジンやブラウザのための情報を記載 -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--descriptionには記事の要約を記載する-->
+    <meta name="description" content="ダフィオのための特設サイト">
+    <!--viewportはモバイル端末での表示をブラウザに指示するためのメタタグ、以下はGoogle推奨の記述-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--titleには記事のタイトルを記載する-->
+    <title>ダフィオ記念館</title>
+    <!--linkタグは「そのページ」と「外部のファイルやページ」を関連づけるためのもの
+    ここではrelでファイルとの関係性を示し、media=allで全てのメディアに適用、
+    hrefでファイルがある場所を指定している。外部のcssファイルを参照している-->
+    <link rel="stylesheet" media="all" href="css/style.css">
+    <link rel="stylesheet" href="css/slide.css">
+    <!--scriptでjavascriptを埋め込む。srcはsourceの意味で情報元を指す-->
+    <script src="js/openclose.js"></script>
+    <script src="js/fixmenu.js"></script>
+    <script src="js/fixmenu_pagetop.js"></script>
+    <script src="js/ddmenu_min.js"></script>
+</head>
+<body class="home">
+<div id="container">
+<header>
+<h1 id="logo"><a href="{% url 'ani:top' %}"><img src="images/logo.png" alt="ダフィオ記念館"></a></h1>
+<!--スライドショー-->
+<aside id="mainimg">
+<img src="images/0.png" alt="" class="slide0">
+<img src="images/1.jpg" alt="" class="slide1">
+<img src="images/2.jpg" alt="" class="slide2">
+<img src="images/3.jpg" alt="" class="slide3">
+</aside>
+</header>
 
+<!--PC用（801px以上端末）メニュー-->
+<nav id="menubar" class="nav-fix-pos">
+<ul class="inner">
+    <li><a href="{% url 'ani:top' %}">TOP</a></li>
+    <li><a href="{% url 'ani:profile' %}">自己紹介</a></li>
+    <li><a href="{% url 'ani:diary' %}">日記</a></li>
+    <li><a href="{% url 'ani:album' %}">アルバム</a></li>
+    <li><a href="{% url 'ani:fortune' %}">ダフィオ占い</a></li>
+</ul>
+</nav>
 
-{% block content %}
+<!--小さな端末用（800px以下端末）メニュー-->
+<nav id="menubar-s">
+<ul>
+    <li><a href="{% url 'ani:top' %}">TOP</a></li>
+    <li><a href="{% url 'ani:profile' %}">自己紹介</a></li>
+    <li><a href="{% url 'ani:diary' %}">日記</a></li>
+    <li><a href="{% url 'ani:album' %}">アルバム</a></li>
+    <li><a href="{% url 'ani:fortune' %}">ダフィオ占い</a></li>
+</ul>
+</nav>
 
-<body></body>
+<footer>
+<div id="copyright">
+<small>Copyright&copy; <a href="{% url 'ani:top' %}">ダフィオ記念館</a> All Rights Reserved.</small>
+<span class="pr"><a href="https://template-party.com/" target="_blank">《Web Design:Template-Party》</a></span>
+</div>
+<!--/#copyright-->
+</footer>
 
-{% endblock %}
+</div>
+<!--/#container-->
+
+<p class="nav-fix-pos-pagetop"><a href="#">↑</a></p>
+
+<!--メニュー開閉ボタン-->
+<div id="menubar_hdr" class="close"></div>
+
+<!--メニューの開閉処理-->
+<script>
+open_close("menubar_hdr", "menubar-s");
+</script>
+
+</body>
+</html>
